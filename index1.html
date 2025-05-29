@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="dist/output.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <!--titulo centrado en  caja blanca-->
+    <div>
+        <h1> Promesas cargando imagenes</h1>
+    </div>
+    <br/>
+     <!--contenedor principar  de botones de las imagenes-->
+    <div>
+        <!--botones de las imagenes que carga imagen bien -->
+        <button onclick="cargarImagen(true)">cargar con exito ✅</button>
+        <!--botones de las imagenes que carga imagen mal -->
+        <button onclick="cargarImagen(false)">cargar con errores 🤬</button>
+    </div>
+    <br/>
+    <!--contenedor de las imagenes que se cargan exitosa o con error -->
+    <div id="mensaje">
+        <!--spinner de cargar oculto inicialmente-->
+        <div id="cargando " class="hidden">
+            <div>
+                <p>🕵️‍♂️Carga de imagen ...</p>
+            </div>
+            <!--imagen que se carga dinamicamente (oculta al inicio) -->
+            
+                <img id ="imagen" class="hidden max-w-full mx-auto mb-2 " alt="imagen cargando...💫">
+                <div id="error" class="hidden text-red-500">
+                    <!--mensaje de error que se muestra si hay un error al cargar la imagen -->
+                    ❌ error al cargar imagen
+                </div>
+        </div>
+    </div>
+    <script>
+        // Función para cargar la imagen
+        function cargarImagen(exito) {
+            // Mostrar el spinner de carga
+            document.getElementById("cargando").classList.remove("hidden");
+            document.getElementById("imagen").classList.add("hidden");
+            document.getElementById("error").classList.add("hidden");
+
+            // Simular una carga de imagen con una promesa
+            new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (exito) {
+                        resolve("https://picsum.photos/200/300");
+                    } else {
+                        reject("Error al cargar la imagen 😢");
+                    }
+                }, 1000); // Simula un retraso de 1 segundos
+            })
+            // Manejar la resolución bien
+            .then(url => {
+                // Ocultar el spinner de carga
+                document.getElementById("cargando").classList.add("hidden");
+                // Mostrar la imagen cargada
+                const imagen = document.getElementById("imagen");
+                imagen.src = url;
+                imagen.classList.remove("hidden");
+            })
+        }
+    </script>
+</body>
+</html>

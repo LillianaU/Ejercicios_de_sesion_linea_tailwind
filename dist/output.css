@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-300: oklch(80.8% 0.114 19.571);
+    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-red-600: oklch(57.7% 0.245 27.325);
     --color-red-800: oklch(44.4% 0.177 26.899);
     --color-amber-600: oklch(66.6% 0.179 58.318);
@@ -325,6 +326,9 @@
   .mr-4 {
     margin-right: calc(var(--spacing) * 4);
   }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
@@ -393,6 +397,9 @@
   }
   .max-w-\[40px\] {
     max-width: 40px;
+  }
+  .max-w-full {
+    max-width: 100%;
   }
   .max-w-md {
     max-width: var(--container-md);
@@ -715,6 +722,9 @@
   }
   .text-inherit {
     color: inherit;
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
   }
   .text-slate-600 {
     color: var(--color-slate-600);
