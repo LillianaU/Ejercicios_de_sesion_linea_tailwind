@@ -7,3 +7,37 @@ crear carpeta src y archivo input.css
 # para que se genere el archivo output.css y se vea los cambios en tiempo real
 # vamos a eliminar el archivo output.css y dejar solo el input.css
 # ejecutamos en la terminar npm run dev
+
+📝 Documento: Descripción de páginas utilizadas para diseño y desarrollo web
+1. https://iconos8.es/icons/set/video
+Propósito:
+Este enlace lleva a una colección de íconos de video en el sitio Icons8, una plataforma muy popular para descargar íconos gratuitos y de pago.
+Usos típicos:
+●	Incorporar íconos visuales en páginas web o aplicaciones móviles.
+●	Representar funciones como “ver video”, “cámara”, “reproducción”, etc.
+________________________________________
+2. https://tailscan.com/tailwind/backgrounds/bg-zinc-50
+Propósito:
+Este enlace lleva a una vista previa del color bg-zinc-50 (un tono muy claro de gris) del sistema de diseño de Tailwind CSS, dentro de la herramienta TailScan.
+Usos típicos:
+●	Elegir colores de fondo para componentes como tarjetas, secciones, formularios.
+●	Obtener clases Tailwind listas para copiar y usar en código HTML.
+________________________________________
+3. (Repetido) https://iconos8.es/icons/set/video
+Nota: Este es el mismo enlace del punto 1, y cumple la misma función: buscar e insertar íconos de video.
+________________________________________
+4. https://tailwindcss-com.translate.goog/docs/background-color?...
+Propósito:
+Este enlace es la documentación oficial de Tailwind CSS traducida automáticamente al español mediante Google Translate. Explica cómo usar colores de fondo (background-color).
+Usos típicos:
+●	Aprender qué clases usar para aplicar colores de fondo (bg-blue-500, bg-zinc-100, etc.).
+●	Consultar combinaciones de colores y ejemplos reales.
+________________________________________
+5. https://www.material-tailwind.com/docs/html/navbar
+Propósito:
+Documentación de Material Tailwind, una librería basada en Tailwind CSS con componentes estilo Material Design. Este enlace va directamente a la sección de barra de navegación (navbar).
+Usos típicos:
+●	Copiar y personalizar barras de navegación modernas y responsivas.
+●	Obtener ejemplos con funcionalidad mobile y diseño elegante.
+https://flowbite.com/docs/components/navbar/
+
