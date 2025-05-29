@@ -25,7 +25,7 @@
         <!--spinner de cargar oculto inicialmente-->
         <div id="cargando" class="hidden">
             <div class="w-8 h-8 border-4 border-black border-t-transparent rounded-full animate-spin mx-auto mb-2">
-                <p>Carga de imagen ...</p>
+                <p>🕵️‍♂️Carga de imagen ...</p>
             </div>
             <!--imagen que se carga dinamicamente (oculta al inicio) -->
             
@@ -51,7 +51,7 @@
       
     if (exito) {
             // Imagen cargada exitosamente: se resuelve la promesa
-            resolve("https://picsum.photos/200/300");
+            resolve("https://picsum.photos/200/300?grayscale");
           } else {
             // Simulación de error: se rechaza la promesa
             reject("No está conectando al servidor. Por eso no carga la imagen.");
@@ -60,6 +60,26 @@
       })
 
 
+      // Cuando la promesa se resuelve correctamente
+      .then(url => {
+        // Ocultar el spinner
+        document.getElementById("cargando").classList.add("hidden");
+        // Mostrar la imagen cargada
+        const img = document.getElementById("imagen");
+        img.src = url;
+        img.classList.remove("hidden");
+      })
+
+
+      // Si ocurre un error (rechazo de promesa)
+      .catch(mensajeError => {
+        // Ocultar el spinner
+        document.getElementById("cargando").classList.add("hidden");
+        // Mostrar mensaje de error
+        document.getElementById("error").classList.remove("hidden");
+        // Mostrar alerta emergente con el error
+        alert(mensajeError);
+      });
     }
   </script>
 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Promesas ejemplo</title>
+
+
+  <!-- Ícono en la pestaña del navegador -->
+  <link rel="icon" type="image/png" href="img/icons8.png" />
+ 
+  <!-- Iconos desde Flaticon -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+ 
+  <!-- Carga de Tailwind CSS (para estilos rápidos y responsivos) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<!-- Fondo de imagen personalizado, scrollable y cubierto -->
+<body class="bg-[url(img/w.jpg)] bg-scroll bg-cover min-h-screen p-4">
+
+
+  <!-- Título centrado en una caja blanca -->
+  <div class="flex justify-center bg-white overflow-visible border-orange-800 rounded-lg shadow-lg p-6 mb-6">
+    <h1 class="font-sans md:font-serif text-5xl">Promesas JS - Carga de imagen</h1>
+  </div>
+  <br/>
+
+
+  <!-- Contenedor principal de botones e imagen -->
+  <div class="bg-white p-6 rounded-lg shadow-md text-center max-w-sm w-full mx-auto">
+
+
+    <!-- Botón para simular carga exitosa -->
+    <button onclick="cargarImagen(true)"
+            class="bg-[#E4DA22] border-4 border-double py-6 px-4 hover:bg-orange-400 cursor-pointer rounded mb-2 w-full">
+      Cargar con éxito
+    </button>
+   
+    <!-- Botón para simular carga con error -->
+    <button onclick="cargarImagen(false)"
+            class="bg-[#E4DA22] border-4 border-double py-6 px-4 hover:bg-orange-400 cursor-pointer rounded w-full">
+      Cargar con errores
+    </button>
+
+
+    <!-- Sección donde se muestra el mensaje, cargando, imagen o error -->
+    <div id="mensaje" class="my-4 italic">
+
+
+      <!--spinner de cargar oculto inicialmente-->
+<div id="cargando" class="hidden">
+    <div>
+        <p>🕵️‍♂️Carga de imagen ...</p>
+    </div>
+    <!--imagen que se carga dinámicamente (oculta al inicio) -->
+    <img id="imagen" class="hidden max-w-full mx-auto mb-2" alt="imagen cargando...💫">
+</div>
+
+<!--mensaje de error que se muestra si hay un error al cargar la imagen -->
+<div id="error" class="hidden text-red-500">
+    ❌ error al cargar imagen
+</div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript para manejar promesas -->
+  <script>
+    // Función que simula carga de imagen usando una Promesa
+    function cargarImagen(exito) {
+      // Mostrar el spinner de carga y ocultar imagen y errores previos
+      document.getElementById('cargando').classList.remove("hidden");
+      document.getElementById('imagen').classList.add("hidden");
+      document.getElementById('error').classList.add("hidden");
+
+
+      // Crear una promesa que simula la carga de la imagen (tarda 1.5 segundos)
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+      
+    if (exito) {
+            // Imagen cargada exitosamente: se resuelve la promesa
+            resolve("https://picsum.photos/200/300?grayscale");
+          } else {
+            // Simulación de error: se rechaza la promesa
+            reject("No está conectando al servidor. Por eso no carga la imagen.");
+          }
+        }, 1500);
+      })
+
+
+      // Cuando la promesa se resuelve correctamente
+      .then(url => {
+        // Ocultar el spinner
+        document.getElementById("cargando").classList.add("hidden");
+        // Mostrar la imagen cargada
+        const img = document.getElementById("imagen");
+        img.src = url;
+        img.classList.remove("hidden");
+      })
+
+
+      // Si ocurre un error (rechazo de promesa)
+      .catch(mensajeError => {
+        // Ocultar el spinner
+        document.getElementById("cargando").classList.add("hidden");
+        // Mostrar mensaje de error
+        document.getElementById("error").classList.remove("hidden");
+        // Mostrar alerta emergente con el error
+        alert(mensajeError);
+      });
+    }
+  </script>
+</body>
+</html>
