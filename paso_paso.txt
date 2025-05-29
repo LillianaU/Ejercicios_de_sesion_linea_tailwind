@@ -1,0 +1,9 @@
+node -v
+npm init -y
+luego en archivo package.json agregar la siguiente linea
+# "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"#
+crear carpeta src y archivo input.css
+# luego en la terminal colocamos npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+# para que se genere el archivo output.css y se vea los cambios en tiempo real
+# vamos a eliminar el archivo output.css y dejar solo el input.css
+# ejecutamos en la terminar npm run dev

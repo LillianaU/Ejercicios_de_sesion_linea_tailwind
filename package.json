@@ -1,0 +1,25 @@
+{
+  "name": "ejercicios_de_sesion_linea_tailwind",
+  "version": "1.0.0",
+  "description": "Hatml, css, tailwind,js, promesas esta parte vamos a estar instalando Tailwind css clic",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LillianaU/Ejercicios_de_sesion_linea_tailwind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LillianaU/Ejercicios_de_sesion_linea_tailwind/issues"
+  },
+  "homepage": "https://github.com/LillianaU/Ejercicios_de_sesion_linea_tailwind#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "tailwindcss": "^4.1.8"
+  }
+}
